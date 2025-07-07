@@ -64,13 +64,24 @@ async function getDatosClima(ciudad) {
 
     // Por las dudas de que esté mostrando el contenedor de error, lo quitamos
     errorMensaje.style.display = "none";
-  
+
     // Sí ocurre un error, mostramos en consola el error, y mostramos el div con el error
     } catch (error) {
         console.error("Ocurrió un error personalizado:", error.message);
         errorMensaje.style.display = "block";
   }
 }
+
+// Al cargar la página, recuperamos la última ciudad buscada
+window.addEventListener('DOMContentLoaded', () => {
+    const ciudadGuardada = JSON.parse(localStorage.getItem('ciudadStorage'));
+    if (ciudadGuardada) {
+        // Llenamos el input y mostramos automáticamente el clima de esa ciudad
+        inputCiudad.value = ciudadGuardada;
+        getDatosClima(ciudadGuardada);
+    }
+});
+
 
 // Función para renderizar el clima
 // obtenemos los párametros
