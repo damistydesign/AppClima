@@ -38,7 +38,7 @@ button.addEventListener('click', (e) => {
 async function getDatosClima(ciudad) {
   try {
     // Hacemos la petición a la API y le pasamos la ciudad que recibamos
-    const respuesta = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${ciudad}&appid=66b0eeb5c6c06c9cf1d864dc262bf0a5&units=metric&lang=es`);
+    const respuesta = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${ciudad}&appid={Clave API}&units=metric&lang=es`);
 
     // En caso de obtener un error en la petición, que despliegue un mensaje
     if (!respuesta.ok) {
