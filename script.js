@@ -111,13 +111,13 @@ function renderClima(temperatura, estado, ciudad){
     // estado, icono
     resultadosContainer.innerHTML = `
             <div class="container__resultados ciudad__style">
-                <p>Ciudad actual: <span id="ciudad">${ciudad}</span></p>
+                <p>Ciudad actual: <br><span id="ciudad">${ciudad}</span></p>
             </div>
             <div class="container__resultados temperatura__style">
-                <p>Temperatura actual: <span id="temperatura">${temperatura}</span></p>
+                <p>Temperatura actual: <br><span id="temperatura">${temperatura}</span></p>
             </div>
             <div class="container__resultados estado__style">
-                <p>Estado del clima: <span id="estado">${estado} ${icono}</span></p>
+                <p>Estado del clima: <br><span id="estado">${estado} ${icono}</span></p>
             </div>
     `;
 

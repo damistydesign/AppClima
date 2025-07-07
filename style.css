@@ -24,6 +24,8 @@ body{
     padding: 2rem;
     background-color: #2F2F2F;
     border-radius: 5px;
+    max-width: 95%;
+    margin: 15px auto 0 auto;
 }
 
 .container h2{
@@ -88,6 +90,7 @@ input:focus{
     padding: 10px 25px;
     border-radius: 10px;
     color: #FFFF;
+    animation: aparicion .5s ease-in;
 }
 
 #error__msg{
@@ -97,28 +100,114 @@ input:focus{
     padding: 15px 25px;
     background-color: #ff0000;
     display: none;
+    animation: aparicion .5s ease-in;
 }
 
 .soleado{
     background-repeat: no-repeat;
     background-size: cover;
     background-image: url(gifs/soleado.gif);
+    animation: aparicion .3s ease-in;
 }
 
 .nublado{
     background-repeat: no-repeat;
     background-size: cover;
     background-image: url(gifs/nublado.gif);
+    animation: aparicion .3s ease-in;
 }
 
 .lloviendo{
     background-repeat: no-repeat;
     background-size: cover;
     background-image: url(gifs/lluvia.gif);
+    animation: aparicion .5s ease-in;
 }
 
 .nevando{
     background-repeat: no-repeat;
     background-size: cover;
     background-image: url(gifs/nevando.gif);
+    animation: aparicion .5s ease-in;
+}
+
+/* Responsive */
+@media (max-width: 880px) {
+    #resultados{
+        grid-template-columns: auto;
+        grid-template-rows: auto auto auto;
+        gap: 1.4em;
+    }
+
+    #error__msg{
+        margin-top: 15px;
+    }
+    
+    .container{
+        margin-bottom: 15px;
+    }
+
+    .logo{
+        margin-top: 15px;
+    }
+    
+    main{
+        max-height: 100vh;
+        margin: 45px auto;
+    }
+    
+    body{
+        min-height: 100vh;
+    }
+}
+
+@media (max-width: 551px) {
+    *{
+        text-overflow: none;
+    }
+    
+    main{
+        min-height: 100vh;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .logo{
+        margin-top: 10rem;
+    }
+
+    .container{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+    
+    .container h2{
+        text-align: center;
+        font-size: 1.5rem;
+    }
+
+    #form{
+
+    }
+
+    body{
+        text-overflow: none;
+    }
+}
+
+/* Animaciones */
+@keyframes aparicion {
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
 }
